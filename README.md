@@ -2,6 +2,8 @@
 
 **Freight Cost Prediction & Invoice Risk Flagging**
 
+**Go and check the web app here: https://invoice-intelligence-system.streamlit.app/**
+
 ## 📌Table of Contents
 
 - <a href="#project-overview">Project Overview </a>
