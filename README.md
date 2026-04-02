@@ -185,7 +185,7 @@ invoice-intelligence-system/
 1. Clone the repository:
 
    ```
-   git clone https://github.com/submich/invoice-intelligence-system.git
+   git clone https://github.com/Submich/invoice-intelligence-system.git
    ```
 2. Install the libraries:
    ```
