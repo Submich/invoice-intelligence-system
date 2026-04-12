@@ -108,14 +108,55 @@ elif model_choice == "Invoice Manual Approval Flag":
     # --- Input Layout (2 columns for better UI) ---
     col1, col2 = st.columns(2)
 
+    # Initialize session state
+    if "flag_invoice_quantity" not in st.session_state:
+        st.session_state.flag_invoice_quantity = 0.0
+    if "flag_invoice_dollars" not in st.session_state:
+        st.session_state.flag_invoice_dollars = 0.0
+    if "flag_freight" not in st.session_state:
+        st.session_state.flag_freight = 0.0
+    if "flag_total_item_quantity" not in st.session_state:
+        st.session_state.flag_total_item_quantity = 0.0
+    if "flag_total_item_dollars" not in st.session_state:
+        st.session_state.flag_total_item_dollars = 0.0
+
+
     with col1:
-        invoice_quantity = st.number_input("Invoice Quantity", min_value=0.0,format="%.0f", help="Total quantity in invoice")
-        invoice_dollars = st.number_input("Invoice Dollars", min_value=0.0,format="%.0f", help="Total invoice amount")
-        freight = st.number_input("Freight", min_value=0.0,format="%.0f", help="Logistics cost")
+        invoice_quantity = st.number_input(
+            "Invoice Quantity",
+            min_value=0.0,
+            format="%.0f",
+            key="flag_invoice_quantity"
+        )
+
+        invoice_dollars = st.number_input(
+            "Invoice Dollars",
+            min_value=0.0,
+            format="%.0f",
+            key="flag_invoice_dollars"
+        )
+
+        freight = st.number_input(
+            "Freight",
+            min_value=0.0,
+            format="%.0f",
+            key="flag_freight"
+        )
 
     with col2:
-        total_item_quantity = st.number_input("Total Item Quantity",format="%.0f", min_value=0.0)
-        total_item_dollars = st.number_input("Total Item Dollars",format="%.0f", min_value=0.0)
+        total_item_quantity = st.number_input(
+            "Total Item Quantity",
+            min_value=0.0,
+            format="%.0f",
+            key="flag_total_item_quantity"
+        )
+
+        total_item_dollars = st.number_input(
+            "Total Item Dollars",
+            min_value=0.0,
+            format="%.0f",
+            key="flag_total_item_dollars"
+        )
 
     st.markdown("---")
 
